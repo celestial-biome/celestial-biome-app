@@ -3,6 +3,7 @@
 Next.js + TypeScript starter for the Celestial Biome unified platform. The UI mirrors the initial wireframes (dashboards,
 activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Query and Supabase.
 
+
 > **Node version**: Next.js 14 requires Node.js **>= 18.17**. Use the included `.nvmrc` (18.20.3) to align local versions:
 > ```bash
 > nvm install
@@ -16,7 +17,7 @@ activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Q
 - **Supabase JS 2.45** for authentication and storage (client scaffolded)
 
 ## Getting started
-<<<<<<< HEAD
+
 1. Ensure you're using Node 18 (recommended: `nvm use` to read `.nvmrc`).
 2. Install dependencies (network access to npm is required):
    ```bash
@@ -54,6 +55,21 @@ The backend is a lightweight Fastify server that reports health and placeholder 
 - Local dev: `npm install && npm run dev` (inside `backend/`)
 - Endpoints: `/health` (liveness) and `/api/status` (environment + feature hints)
 
+=======
+1. Install dependencies (network access to npm is required):
+   ```bash
+   npm install
+   ```
+2. Copy the environment template and add your Supabase values:
+   ```bash
+   cp .env.example .env.local
+   # set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) to see the starter dashboard.
 
 ## Project layout
 - `src/app/layout.tsx` — global layout, providers, and navigation shell.
