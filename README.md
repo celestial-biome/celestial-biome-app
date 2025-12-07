@@ -34,7 +34,6 @@ activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Q
 
 ## Running with Docker Compose (frontend + backend)
 The repository includes a Django REST backend and a Next.js frontend wired together via `docker-compose.yml`.
-
 ```bash
 docker compose up --build
 ```
@@ -58,8 +57,6 @@ The backend is a minimal Django project with Django REST Framework and CORS enab
 - Dependencies: managed via `backend/requirements.txt`
 - Local dev: `python manage.py migrate && python manage.py runserver 0.0.0.0:8000`
 - Endpoints: `/health` (liveness) and `/api/status` (environment + feature hints)
-
-## Project layout
 - `src/app/layout.tsx` — global layout, providers, and navigation shell.
 - `src/app/page.tsx` — landing dashboard matching the UX sketches.
 - `src/components/` — composable UI cards (timeline, chat preview, logs, setup checklist).
