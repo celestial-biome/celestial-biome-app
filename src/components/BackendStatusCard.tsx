@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 type BackendStatus = {
   backend: string;
@@ -33,9 +33,9 @@ export function BackendStatusCard() {
       <div className="flex items-center justify-between">
         <div>
           <div className="text-sm uppercase tracking-wide text-white/60">Backend status</div>
-          <p className="text-sm text-white/70">Fastify service with health and platform metadata.</p>
+          <p className="text-sm text-white/70">Django REST service exposing health and platform metadata.</p>
         </div>
-        <span className="badge">Port 4000</span>
+        <span className="badge">Port 8000</span>
       </div>
 
       {isLoading && <p className="text-sm text-white/60">Checking service...</p>}

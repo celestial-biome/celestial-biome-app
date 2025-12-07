@@ -7,3 +7,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 coverage
+backend/__pycache__
+backend/.venv
+backend/db.sqlite3

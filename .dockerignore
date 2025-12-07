@@ -7,5 +7,8 @@ pnpm-debug.log*
 .env.local
 .DS_Store
 coverage
-backend/node_modules
-backend/dist
+backend/__pycache__
+backend/.venv
+backend/db.sqlite3
+backend/.vscode
+

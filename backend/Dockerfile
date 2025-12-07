@@ -1,7 +1,13 @@
-FROM node:18-bullseye
+FROM python:3.12-slim
+
 WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN if [ -f package-lock.json ]; then npm install; else npm install --package-lock-only && npm install; fi
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
-EXPOSE 4000
-CMD ["npm", "run", "dev"]
+
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
