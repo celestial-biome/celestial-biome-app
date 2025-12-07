@@ -2,6 +2,7 @@ import { DashboardHighlights } from "@/components/DashboardHighlights";
 import { ChatPreview } from "@/components/ChatPreview";
 import { LogPanels } from "@/components/LogPanels";
 import { SupabaseStatusCard } from "@/components/SupabaseStatusCard";
+import { BackendStatusCard } from "@/components/BackendStatusCard";
 import { TimelineCard } from "@/components/TimelineCard";
 
 const supabaseConfigured = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
@@ -59,6 +60,7 @@ export default function Home() {
 
         <div className="space-y-4">
           <ChatPreview />
+          <BackendStatusCard />
           <SupabaseStatusCard configured={supabaseConfigured} />
         </div>
       </section>

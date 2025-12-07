@@ -1,0 +1,7 @@
+FROM node:18-bullseye
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN if [ -f package-lock.json ]; then npm install; else npm install --package-lock-only && npm install; fi
+COPY . .
+EXPOSE 3000
+CMD ["npm", "run", "dev", "--", "--hostname", "0.0.0.0", "--port", "3000"]
