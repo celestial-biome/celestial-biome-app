@@ -16,6 +16,7 @@ activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Q
 - **Supabase JS 2.45** for authentication and storage (client scaffolded)
 
 ## Getting started
+<<<<<<< HEAD
 1. Ensure you're using Node 18 (recommended: `nvm use` to read `.nvmrc`).
 2. Install dependencies (network access to npm is required):
    ```bash
@@ -52,6 +53,7 @@ The backend is a lightweight Fastify server that reports health and placeholder 
 - Source: `backend/src/index.js`
 - Local dev: `npm install && npm run dev` (inside `backend/`)
 - Endpoints: `/health` (liveness) and `/api/status` (environment + feature hints)
+
 
 ## Project layout
 - `src/app/layout.tsx` — global layout, providers, and navigation shell.
