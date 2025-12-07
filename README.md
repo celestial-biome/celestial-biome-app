@@ -3,6 +3,7 @@
 Next.js + TypeScript starter for the Celestial Biome unified platform. The UI mirrors the initial wireframes (dashboards,
 activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Query and Supabase.
 
+
 > **Node version**: Next.js 14 requires Node.js **>= 18.17**. Use the included `.nvmrc` (18.20.3) to align local versions:
 > ```bash
 > nvm install
@@ -16,6 +17,7 @@ activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Q
 - **Supabase JS 2.45** for authentication and storage (client scaffolded)
 
 ## Getting started
+
 1. Ensure you're using Node 18 (recommended: `nvm use` to read `.nvmrc`).
 2. Install dependencies (network access to npm is required):
    ```bash
@@ -33,7 +35,9 @@ activity timeline, AI chat, and admin checklist) and is pre-wired for TanStack Q
 5. Open [http://localhost:3000](http://localhost:3000) to see the starter dashboard.
 
 ## Running with Docker Compose (frontend + backend)
+
 The repository includes a Django REST backend and a Next.js frontend wired together via `docker-compose.yml`.
+
 
 ```bash
 docker compose up --build
@@ -41,10 +45,13 @@ docker compose up --build
 
 This starts:
 - **frontend** on [http://localhost:3000](http://localhost:3000) with live reload.
+
 - **backend** on [http://localhost:8000](http://localhost:8000) exposing `/health` and `/api/status` via Django REST Framework.
+
 
 Environment variables (`NEXT_PUBLIC_*`) are passed through from your host to the frontend container. Update `.env.example` as
 needed and export them before running `docker compose`.
+
 
 ## Backend service (Django REST)
 The backend is a minimal Django project with Django REST Framework and CORS enabled for local development.
@@ -53,6 +60,15 @@ The backend is a minimal Django project with Django REST Framework and CORS enab
 - Dependencies: managed via `backend/requirements.txt`
 - Local dev: `python manage.py migrate && python manage.py runserver 0.0.0.0:8000`
 - Endpoints: `/health` (liveness) and `/api/status` (environment + feature hints)
+
+
+## Backend service
+The backend is a lightweight Fastify server that reports health and placeholder platform metadata.
+
+- Source: `backend/src/index.js`
+- Local dev: `npm install && npm run dev` (inside `backend/`)
+- Endpoints: `/health` (liveness) and `/api/status` (environment + feature hints)
+
 
 ## Project layout
 - `src/app/layout.tsx` — global layout, providers, and navigation shell.
